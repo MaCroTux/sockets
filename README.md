@@ -22,6 +22,7 @@ Tabla comparativa de las principales características de WebSocket y Socket.io
 | Envío de mensajes         |    Si     |        Si |
 | Escaldo horizontal        |    No     |        Si |
 | Identificador interno     |    No     |        Si |
+| Middlewares               |    No     |        Si |
 
 
 ## Ejemplo de código
