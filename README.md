@@ -8,6 +8,9 @@ todos los clientes conectados, permite el envío de mensajes a un cliente en par
 de mensajes a un grupo de clientes, permite el envío de mensajes a todos los clientes excepto a uno en 
 particular.
 
+## Cheatsheet
+https://socket.io/docs/v3/emit-cheatsheet/
+
 Tabla comparativa de las principales características de WebSocket y Socket.io
 
 | Features                  | WebSocket | Socket.io |
