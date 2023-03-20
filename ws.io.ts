@@ -3,6 +3,7 @@ import { Server, Socket } from "socket.io";
 
 import * as express from 'express'
 import {Request, Response} from "express";
+import * as path from "path";
 
 const httpServer = createServer();
 const io = new Server(httpServer, {
@@ -34,6 +35,8 @@ app.get('/', async (req: Request, res: Response) => {
     io.emit("message", { someProperty: "some value", otherProperty: "other value" });
     res.send('Sending message')
 })
+
+app.use(express.static(path.join(__dirname, '../../public')));
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

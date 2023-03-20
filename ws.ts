@@ -1,6 +1,7 @@
 import {WebSocket} from 'ws'
 import * as express from 'express'
 import {Request, Response} from "express";
+import * as path from "path";
 
 const app = express()
 const port = 3000
@@ -42,12 +43,14 @@ wss.on('connection', (ws: WebSocket, req: Request) => {
     registerNewClientAndConfirmOurId(ws, req)
 });
 
-app.get('/', async (req: Request, res: Response) => {
+app.get('/send', async (req: Request, res: Response) => {
     const [connected, disconnected] = await sendBroadcastMessageForAllClientsAndReturnStatistics()
     const statistics = `Send Broadcast, ${connected} connected users and ${disconnected} disconnected and deleted users.`
     console.log(statistics)
     res.send(statistics)
 })
+
+app.use(express.static(path.join(__dirname, '../../public')));
 
 app.listen(3000, () => {
     console.log(`Example app listening on port ${port}`)

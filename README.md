@@ -43,6 +43,6 @@ tsc && node dist/server/ws.js
 
 Ejecutar en el navegador
 
-* app.io.html o app.html, para comprobar en terminal los mensajes recibidos
-
+* http://localhost:3000/app.html, para comprobar en terminal los mensajes recibidos con WebSocket
+* http://localhost:3000/app.io.html, para comprobar en terminal los mensajes recibidos con Socket.io
 * http://localhost:3000/ para el envío de mensajes hacia los clientes conectados
